@@ -16,7 +16,7 @@ public class VisitorController {
     public VisitorController(VisitorService visitorService) {
         this.visitorService = visitorService;
     }
-    @GetMapping("/api/visitors ")
+    @GetMapping("/api/visitors")
     public ResponseEntity<List<Visitor>> getVisitors(){
         return ResponseEntity.ok(visitorService.getVisitors());
     }
@@ -28,7 +28,7 @@ public class VisitorController {
     public ResponseEntity<Visitor> createVisitor(@RequestBody Visitor visitor){
         return ResponseEntity.ok(visitorService.add(visitor));
     }
-    @DeleteMapping(" /api/visitors/{id} ")
+    @DeleteMapping("/api/visitors/{id}")
     public ResponseEntity<Visitor> deleteVisitor(@PathVariable Long id){
         return ResponseEntity.ok(visitorService.deleteVisitorById(id));
     }
@@ -36,12 +36,12 @@ public class VisitorController {
     public ResponseEntity<String > getVisitorsCount(){
         return ResponseEntity.ok(visitorService.countVisitors());
     }
-    @PutMapping(" /api/visitors/{id}")
+    @PutMapping("/api/visitors/{id}")
     public ResponseEntity<Visitor> updateVisitor(@PathVariable Long id){
         return ResponseEntity.ok(visitorService.updateVisitorById(id));
     }
     @GetMapping("/api/visitors")
-    public ResponseEntity<Visitor> getVisitorByPurpose(@PathVariable String purpose){
+    public ResponseEntity<Visitor> getVisitorByPurpose(@RequestParam String purpose){
         return ResponseEntity.ok(visitorService.getVisitorByPurpose(purpose));
     }
 }
