@@ -43,4 +43,8 @@ public class VisitorService {
         }
        return null;
     }
+
+    public String countVisitors(){
+        return "Number of visitors: " +  visitors.size();
+    }
 }
