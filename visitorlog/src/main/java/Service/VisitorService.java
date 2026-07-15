@@ -35,4 +35,12 @@ public class VisitorService {
         System.out.println("there is no visitor with id " + id);
         return null;
     }
+    public Visitor deleteVisitorById(int id){
+        for (int i = 0; i < visitors.size(); i++) {
+            if (visitors.get(i).getId() == id) {
+                return visitors.remove(i);
+            }
+        }
+       return null;
+    }
 }
