@@ -41,7 +41,7 @@ public class VisitorService {
                 return visitors.remove(i);
             }
         }
-       return null;
+        throw new IllegalArgumentException("Visitor with ID " + id + " not found.");
     }
 
     public String countVisitors(){
@@ -58,7 +58,7 @@ public class VisitorService {
               return visitor;
             }
         }
-        return null;
+        throw new IllegalArgumentException("Visitor with ID " + id + " not found.");
     }
 
     public Visitor getVisitorByPurpose(String purpose){
@@ -67,6 +67,6 @@ public class VisitorService {
                 return visitor;
             }
         }
-        return null;
+        throw new IllegalArgumentException("Visitor with purpose " + purpose + " not found.");
     }
 }
