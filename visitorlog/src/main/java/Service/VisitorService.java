@@ -47,4 +47,17 @@ public class VisitorService {
     public String countVisitors(){
         return "Number of visitors: " +  visitors.size();
     }
+
+    public Visitor updateVisitorById(Long id){
+        Visitor visitor = getVisitorById(id);
+        for (int i = 0; i < visitors.size(); i++) {
+            if (visitors.get(i).getId().equals(id)) {
+              visitor.setName(visitors.get(i).getName());
+              visitor.setCompany(visitors.get(i).getCompany());
+              visitor.setPurpose(visitors.get(i).getPurpose());
+              return visitor;
+            }
+        }
+        return null;
+    }
 }
