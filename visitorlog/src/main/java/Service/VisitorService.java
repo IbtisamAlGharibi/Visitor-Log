@@ -25,4 +25,14 @@ public class VisitorService {
         }
         return visitors;
     }
+
+    public Visitor getVisitorById(int id){
+        for (Visitor visitor : visitors){
+            if (visitor.getId() == id){
+                return visitor;
+            }
+        }
+        System.out.println("there is no visitor with id " + id);
+        return null;
+    }
 }
