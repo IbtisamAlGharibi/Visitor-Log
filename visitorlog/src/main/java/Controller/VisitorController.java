@@ -32,4 +32,8 @@ public class VisitorController {
     public ResponseEntity<Visitor> deleteVisitor(@PathVariable Long id){
         return ResponseEntity.ok(visitorService.deleteVisitorById(id));
     }
+    @GetMapping("/api/visitors/count")
+    public ResponseEntity<String > getVisitorsCount(){
+        return ResponseEntity.ok(visitorService.countVisitors());
+    }
 }
