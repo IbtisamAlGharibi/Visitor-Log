@@ -36,4 +36,8 @@ public class VisitorController {
     public ResponseEntity<String > getVisitorsCount(){
         return ResponseEntity.ok(visitorService.countVisitors());
     }
+    @PutMapping(" /api/visitors/{id}")
+    public ResponseEntity<Visitor> updateVisitor(@PathVariable Long id){
+        return ResponseEntity.ok(visitorService.updateVisitorById(id));
+    }
 }
