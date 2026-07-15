@@ -60,4 +60,13 @@ public class VisitorService {
         }
         return null;
     }
+
+    public Visitor getVisitorByPurpose(String purpose){
+        for (Visitor visitor : visitors){
+            if (visitor.getPurpose().equals(purpose)){
+                return visitor;
+            }
+        }
+        return null;
+    }
 }
