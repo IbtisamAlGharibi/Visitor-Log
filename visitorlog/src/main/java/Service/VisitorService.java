@@ -26,18 +26,18 @@ public class VisitorService {
         return visitors;
     }
 
-    public Visitor getVisitorById(int id){
+    public Visitor getVisitorById(Long id){
         for (Visitor visitor : visitors){
-            if (visitor.getId() == id){
+            if (visitor.getId().equals(id)){
                 return visitor;
             }
         }
         System.out.println("there is no visitor with id " + id);
         return null;
     }
-    public Visitor deleteVisitorById(int id){
+    public Visitor deleteVisitorById(Long id){
         for (int i = 0; i < visitors.size(); i++) {
-            if (visitors.get(i).getId() == id) {
+            if (visitors.get(i).getId().equals(id) ) {
                 return visitors.remove(i);
             }
         }
