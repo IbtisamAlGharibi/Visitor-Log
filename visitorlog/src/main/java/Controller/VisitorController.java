@@ -28,5 +28,8 @@ public class VisitorController {
     public ResponseEntity<Visitor> createVisitor(@RequestBody Visitor visitor){
         return ResponseEntity.ok(visitorService.add(visitor));
     }
-
+    @DeleteMapping(" /api/visitors/{id} ")
+    public ResponseEntity<Visitor> deleteVisitor(@PathVariable Long id){
+        return ResponseEntity.ok(visitorService.deleteVisitorById(id));
+    }
 }
