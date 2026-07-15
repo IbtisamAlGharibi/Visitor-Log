@@ -40,7 +40,7 @@ public class VisitorController {
     public ResponseEntity<Visitor> updateVisitor(@PathVariable Long id){
         return ResponseEntity.ok(visitorService.updateVisitorById(id));
     }
-    @GetMapping("/api/visitors")
+    @GetMapping("/api/visitors/purpose")
     public ResponseEntity<Visitor> getVisitorByPurpose(@RequestParam String purpose){
         return ResponseEntity.ok(visitorService.getVisitorByPurpose(purpose));
     }
